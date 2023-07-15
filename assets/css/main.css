@@ -1,0 +1,373 @@
+/* 공통 영역 */
+.headline{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 27px;
+}
+.grid-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:0 2.22%;
+    counter-reset: number;
+}
+.grid-item{
+    position: relative;
+    padding-bottom: 50px;
+}
+.grid-item img{
+    width: 100%;
+}
+
+.banner-more{
+    margin-top: 30px;
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+/* 공통 - 상품 정보 */
+
+.img-box{
+    position: relative;
+}
+.img-box .icon{
+    position:absolute;
+    top:0;right:0;
+    width: 38px;
+}
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding: 20px 7px 0;
+}
+.product-info .review{
+    font-size: 13px;
+    font-weight: 600;
+    color: #8e1f29;
+    letter-spacing: 0.006em;
+}
+.product-info strong{
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 17px;
+}
+.product-info .price{
+    font-size: 15px;
+    font-weight: 500;
+}
+.product-info .discount{
+    margin-right: 5px;
+    font-weight: 600;
+    color: #8e1f29;
+}
+.product-info del{
+    margin-left: 5px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #8d8d8d;
+    white-space:nowrap;
+}
+.product-info .label{
+    padding: 4px 6px 5px;
+    border: 1px solid rgba(142,31,41,0.5);
+    font-size: 10px;
+    font-weight: 500;
+    color: #8e1f29;
+}
+.product-info .label-box{
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+
+/* 공통 영역 - 전체보기 버튼 */
+.link-more{
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    border: 1px solid #C8CBD2;
+    border-radius: 4px;
+    margin: 0 16px 60px;
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #000;
+    text-align: center;
+}
+.link-more::after{
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-left: 2px;
+    background: url('../images/arrow_right.png') no-repeat -4px -2px / auto 16px;
+    content:'';
+}
+.sc-best .link-more span{
+    color: #C86733;
+}
+
+/* 메인 비주얼 슬라이더 */
+
+.sc-visual a {
+    display: block;
+    position: relative;
+}
+.sc-visual img{
+    width: 100%;
+    height: calc(100vh - 141px);
+    object-fit: cover;
+}
+.sc-visual .text-box {
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 90px 7.5%;
+    color: #fff;
+}
+.sc-visual .title{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.sc-visual .desc{
+    font-size: 17px;
+    line-height: 1.4;
+    padding-top: 15px;
+}
+.sc-visual .pagination{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px; left: 0;
+    z-index: 1;
+}
+.sc-visual .pagination .swiper-pagination-bullet{
+    width: 20px;
+    height: 2px;
+    margin: 0;
+    background: #fff;
+    opacity: 0.3;
+    border-radius:0;
+}
+.sc-visual .pagination .swiper-pagination-bullet-active{
+    opacity: 1;
+}
+
+/* BEST - 탭 버튼 */
+.sc-best{
+    padding-top: 54px;
+}
+.sc-best .tab-list{
+    display: flex;
+    gap: 10px;
+    padding: 0 18px;
+    margin-bottom: 21px;
+}
+.sc-best .tab-item{
+    display: block;
+    padding: 13px 10px;
+    border-radius: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#77797E;
+}
+.sc-best .tab-item.on{
+    background: #b7561f;
+    font-weight: 600;
+    color: #fff;
+}
+/* BEST - 탭 컨텐츠 */
+.sc-best .tabcon{
+    display:none;
+}
+.sc-best .tabcon.on{
+    display: block;
+}
+
+.sc-best .grid-item::before{
+    display: block;
+    position: absolute;
+    top: 0;left: 0;
+    width: 30px;
+    height: 29px;
+    line-height: 30px;
+    background: #000;
+    color:#fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    content:counter(number);
+    counter-increment: number;
+    z-index:1;
+}
+
+
+/* 배너 영역 1 */
+.sc-banner01{
+    margin-bottom: 20px;
+}
+.sc-banner01 img{
+    width: 100%;
+}
+
+/* 스윔웨어 & 맨즈 배너 */
+.sc-recomm img{
+    width: 100%;
+}
+.sc-recomm .text-box{
+    padding: 20px 16px 0;
+}
+.sc-recomm .title{
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: -0.06em;
+    margin-bottom: 14px;
+}
+.sc-recomm .desc{
+    margin-bottom: 28px;
+    line-height: 26px;
+}
+.sc-recomm .recomm-link-more{
+    display: block;
+    width: 117px;
+    height: 38px;
+    line-height: 38px;
+    margin-left: 16px;
+    padding: 0 18px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: #fff;
+    background: #1e1e1e url(../images/Icon_move.png) no-repeat calc(100% - 18px) center / 15px auto;
+}
+
+/* 스윔웨어 & 맨즈 상품목록 */
+.recomm-list{
+    padding: 20px 16px 40px;
+}
+.recomm-item{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 28px;
+    padding: 20px 0;
+}
+.recomm-item+.recomm-item{
+    border-top: 1px solid #eeeeee;
+}
+.recomm-item .icon{
+    width: 30px;
+}
+.recomm-item .product-info{
+    padding: 6px 28px 6px 0 ;
+}
+/* 이달의 신상 */
+.sc-new{
+    padding-top: 10px;
+}
+/* 배너 영역 2 */
+.sc-banner02{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: #C86733;
+    padding: 56px 20px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+.sc-banner02 .title{
+    border-bottom: 1px solid #fff;
+    padding-bottom: 6px;
+    font-size: 18px;
+    letter-spacing: -0.025em;
+}
+.sc-banner02 strong{
+    margin: 10px 0;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+.sc-banner02 p{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+
+/* 상품 영역 */
+.sc-product{
+    padding-left: 16px;
+}
+.product-area{
+    overflow: hidden;
+    padding-right:16px;
+    padding-bottom: 10px;
+}
+.product-area .title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 30px 0;
+}
+.product-area .title a+a{
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.product-area .title a+a:after{
+    display: block;
+    width: 15px;
+    height: 10px;
+    background: url(../images/more_btn.png) no-repeat center / 100% auto;
+    content:'';
+}
+.product-area img{
+    width: 100%;
+}
+/* 배너 영역 3 */
+.sc-banner{
+    padding: 80px 16px 74px;
+    color: #fff;
+}
+.sc-banner a{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.sc-banner .title{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.sc-banner .desc{
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.025em;
+}
+.sc-banner span{
+    font-size: 15px;
+    font-weight: 500;
+}
+.banner03{
+    margin-top: 70px;
+    background: url(../images/banner_4.jpg) no-repeat center / cover;
+}
+.banner04{
+    margin-top: 10px;
+    background: url(../images/banner_5.jpg) no-repeat center / cover;
+}
