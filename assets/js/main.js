@@ -75,6 +75,7 @@ $('.search-close').click(function(){
 // 메인 비주얼 슬라이더
 const MainVisual = new Swiper(".sc-visual .swiper",{
     effect:"fade",
+    loop:true,
     pagination:{
         el:".pagination"
     },
