@@ -15,48 +15,55 @@ $(window).scroll(function(){
     if(curr >= target){
         if(curr > 0){
             $('.header').addClass('fixed');
+            $('.header path').css("fill","#000");
         } else{
             $('.header').removeClass('fixed');
+            $('.header path').css("fill","#fff");
         }
     }
 })
 
 
 // 헤더 메뉴
-$('.open-all').click(function(){
-    $('.allmenu-title').addClass('on');
-    $('.allmenu-area').slideDown();
-})
-$('.close-all').click(function(){
-    $('.allmenu-title').removeClass('on');
-    $('.allmenu-area').slideUp();
+$('.allmenu-toggle.open').click(function(){
+    $(this).toggleClass('open').toggleClass('close');
+    $('.allmenu-title').toggleClass('on');
+    $('.allmenu-area').stop().slideToggle();
+
+    if($(this).attr('aria-label') == '메뉴열기'){
+        $(this).attr('aria-label','메뉴닫기')
+        
+    }else if($(this).attr('aria-label') == '메뉴닫기'){
+        $(this).attr('aria-label','메뉴열기')
+    }
 })
 
 // GNB 열고닫기
 $('.gnb-btn').click(function(){
     $('body').addClass('dimmed');
-    $('.gnb-area').addClass('on');
+    $('.gnb').addClass('on');
 })
 $('.gnb-close').click(function(){
     $('body').removeClass('dimmed');
-    $('.gnb-area').removeClass('on');
+    $('.gnb').removeClass('on');
 })
 
 // gnb 바깥영역 클릭시 닫기
 $(document).click(function(e){
-    if($('.gnb-area').hasClass('on') == 1){
+    if($('.gnb').hasClass('on') == 1){
+        console.log(e.target);
         if(
-            $('.gnb-area').has(e.target).length == 0 && 
-            $('.gnb-btn').is(e.target) == 0
+            $('.gnb').has(e.target).length == 0 && 
+            $('.gnb-btn').has(e.target).length == 0 
         ){
             $('body').removeClass('dimmed');
-            $('.gnb-area').removeClass('on');
+            $('.gnb').removeClass('on');
         }
     }
 })
 
 // GNB 아코디언 메뉴
-$('.gnb .nav').click(function(){
+$('.group-gnb .nav').click(function(){
     $(this).toggleClass('on');
     $(this).next().toggleClass('on');
     $(this).next().slideToggle();
@@ -87,24 +94,14 @@ const MainVisual = new Swiper(".sc-visual .swiper",{
 // BEST 탭
 $('.tab-item').click(function(e){
     e.preventDefault();
-    tabCon = $(this).data('tab');
+    tabCon = $(this).children().data('tab');
 
     $(this).addClass('on').siblings().removeClass('on');
     $(tabCon).addClass('on').siblings().removeClass('on');
 })
 
 // 상품 영역 슬라이더
-const productSlide1 = new Swiper(".product-area .swiper1",{
-    slidesPerView: 2.1,
-    spaceBetween: 10,
-    freeMode: true,
-})
-const productSlide2 = new Swiper(".product-area .swiper2",{
-    slidesPerView: 2.1,
-    spaceBetween: 10,
-    freeMode: true,
-})
-const productSlide3 = new Swiper(".product-area .swiper3",{
+const productSlide = new Swiper(".cate-swiper",{
     slidesPerView: 2.1,
     spaceBetween: 10,
     freeMode: true,

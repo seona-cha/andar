@@ -15,11 +15,14 @@
     position: relative;
     padding-bottom: 50px;
 }
+.grid-item > a {
+    height: calc(100% - 50px);
+}
 .grid-item img{
     width: 100%;
 }
 
-.banner-more{
+.brand-more, .banner-more{
     margin-top: 30px;
     border: 1px solid #fff;
     padding: 10px 25px;
@@ -30,13 +33,19 @@
 
 /* 공통 - 상품 정보 */
 
-.img-box{
+.prd .img-box{
     position: relative;
 }
-.img-box .icon{
+.prd .img-box .icon{
     position:absolute;
     top:0;right:0;
     width: 38px;
+}
+
+.prd li > a{
+    position:absolute;
+    z-index:1;
+    width: 100%;
 }
 
 .product-info{
@@ -47,6 +56,8 @@
     padding: 20px 7px 0;
 }
 .product-info .review{
+    position: relative;
+    z-index:2;
     font-size: 13px;
     font-weight: 600;
     color: #8e1f29;
@@ -213,32 +224,32 @@
 
 
 /* 배너 영역 1 */
-.sc-banner01{
+.sc-coupon{
     margin-bottom: 20px;
 }
-.sc-banner01 img{
+.sc-coupon img{
     width: 100%;
 }
 
 /* 스윔웨어 & 맨즈 배너 */
-.sc-recomm img{
+.group-theme img{
     width: 100%;
 }
-.sc-recomm .text-box{
+.group-theme .text-box{
     padding: 20px 16px 0;
 }
-.sc-recomm .title{
+.group-theme .title{
     font-size: 26px;
     font-weight: 700;
     line-height: 35px;
     letter-spacing: -0.06em;
     margin-bottom: 14px;
 }
-.sc-recomm .desc{
+.group-theme .desc{
     margin-bottom: 28px;
     line-height: 26px;
 }
-.sc-recomm .recomm-link-more{
+.group-theme .theme-link-more{
     display: block;
     width: 117px;
     height: 38px;
@@ -254,22 +265,27 @@
 }
 
 /* 스윔웨어 & 맨즈 상품목록 */
-.recomm-list{
+.theme-list{
     padding: 20px 16px 40px;
 }
-.recomm-item{
+.theme-item{
     display: grid;
     grid-template-columns: 110px 1fr;
     gap: 28px;
+    position: relative;
     padding: 20px 0;
 }
-.recomm-item+.recomm-item{
+.theme-item > a{
+    height: calc(100% - 40px);
+    top: 20px;
+}
+.theme-item+.theme-item{
     border-top: 1px solid #eeeeee;
 }
-.recomm-item .icon{
+.theme-item .icon{
     width: 30px;
 }
-.recomm-item .product-info{
+.theme-item .product-info{
     padding: 6px 28px 6px 0 ;
 }
 /* 이달의 신상 */
@@ -277,7 +293,7 @@
     padding-top: 10px;
 }
 /* 배너 영역 2 */
-.sc-banner02{
+.sc-brand a{
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -286,20 +302,20 @@
     margin-bottom: 25px;
     color: #fff;
 }
-.sc-banner02 .title{
+.sc-brand .title{
     border-bottom: 1px solid #fff;
     padding-bottom: 6px;
     font-size: 18px;
     letter-spacing: -0.025em;
 }
-.sc-banner02 strong{
+.sc-brand strong{
     margin: 10px 0;
     font-size: 30px;
     line-height: 36px;
     font-weight: 600;
     letter-spacing: -0.03em;
 }
-.sc-banner02 p{
+.sc-brand p{
     font-size: 12px;
     font-weight: 500;
     line-height: 1.4;
@@ -308,35 +324,41 @@
 
 
 /* 상품 영역 */
-.sc-product{
+.sc-cate{
     padding-left: 16px;
 }
-.product-area{
+.group-cate{
+    position: relative;
     overflow: hidden;
     padding-right:16px;
     padding-bottom: 10px;
 }
-.product-area .title{
+.group-cate .swiper-slide > a{
+    height: 100%;
+}
+.group-cate .title{
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     font-weight: 600;
     padding: 30px 0;
 }
-.product-area .title a+a{
+.group-cate .link-cate{
     display: flex;
     gap: 5px;
+    position: absolute;
+    top: 35px; right: 16px;
     font-size: 15px;
     font-weight: 500;
 }
-.product-area .title a+a:after{
+.group-cate .link-cate::after{
     display: block;
     width: 15px;
     height: 10px;
     background: url(../images/more_btn.png) no-repeat center / 100% auto;
     content:'';
 }
-.product-area img{
+.group-cate img{
     width: 100%;
 }
 /* 배너 영역 3 */
@@ -363,11 +385,11 @@
     font-size: 15px;
     font-weight: 500;
 }
-.banner03{
+.membership{
     margin-top: 70px;
     background: url(../images/banner_4.jpg) no-repeat center / cover;
 }
-.banner04{
+.store{
     margin-top: 10px;
     background: url(../images/banner_5.jpg) no-repeat center / cover;
 }
