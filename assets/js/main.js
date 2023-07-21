@@ -11,15 +11,12 @@ const MainTopSwiper = new Swiper(".top-banner",{
 $(window).scroll(function(){
     curr = $(this).scrollTop();
     target = $('.header').offset().top;
-
     if(curr >= target){
-        if(curr > 0){
-            $('.header').addClass('fixed');
-            $('.header path').css("fill","#000");
-        } else{
-            $('.header').removeClass('fixed');
-            $('.header path').css("fill","#fff");
-        }
+        $('.header').addClass('fixed');
+        $('.header path').css("fill","#000");
+    }else{
+        $('.header').removeClass('fixed');
+        $('.header path').css("fill","#fff");
     }
 })
 

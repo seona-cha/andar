@@ -64,6 +64,7 @@
     top: 0; left:0;
     width: 100%;
     z-index:10;
+    background-color: none;
     transition:background 0.3s;
 }
 .header .group-header{
@@ -117,8 +118,8 @@
 }
 /* header - fixed */
 .header.fixed { 
-    position: fixed;
-    top: 0; left: 0;
+    /* position: fixed;
+    top: 0; left: 0; */
     background: #fff;
 }
 .header.fixed .group-header{
