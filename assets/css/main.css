@@ -129,7 +129,7 @@
 }
 
 /* 메인 비주얼 슬라이더 */
-
+.sc-visual{ margin-top:-96px;}
 .sc-visual a {
     display: block;
     position: relative;
