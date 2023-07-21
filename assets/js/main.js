@@ -47,8 +47,7 @@ $('.gnb-close').click(function(){
 
 // gnb 바깥영역 클릭시 닫기
 $(document).click(function(e){
-    if($('.gnb').hasClass('on') == 1){
-        console.log(e.target);
+    if($('.gnb').hasClass('on')){
         if(
             $('.gnb').has(e.target).length == 0 && 
             $('.gnb-btn').has(e.target).length == 0 
